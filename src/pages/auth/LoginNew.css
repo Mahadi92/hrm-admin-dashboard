@@ -1,0 +1,28 @@
+.rtimg{
+    background-image: linear-gradient(#27272788, #615f5f65), url('../../assets/images/auth-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    width:100%;
+    position: relative;
+}
+.rtimg .overlay{
+    position: absolute;
+    top: 220px;
+    left: 0;
+    right: 0;
+}
+
+.lgnbtn{
+    background-color:#ee7e22 !important;
+    color: #fff !important;
+}
+.lgnbtnPurple{
+    background-color:#e70c7c !important;
+    color: #fff !important;
+}
+@media (max-width: 768px) {
+    .rtimg{
+        display: none;
+    }
+}

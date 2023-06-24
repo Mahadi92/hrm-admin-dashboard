@@ -1,0 +1,27 @@
+@media only screen and (max-width:393px) {
+    .empPunchCon {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+        flex-direction: column;
+    }
+    .empPunchCon .empFirst{
+        display: block !important;
+    }
+    .empPunchCon .empThrid{
+        margin: 20px;
+    }
+}
+@media only screen and (max-width:468px) {
+    .empPunchCon {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+        flex-direction: column;
+    }
+    .empPunchCon .empFirst{
+        display: block !important;
+    }
+}

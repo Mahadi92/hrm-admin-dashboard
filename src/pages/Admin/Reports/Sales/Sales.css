@@ -1,0 +1,22 @@
+
+.salesbtn:nth-child(1){
+    color: #333 !important;
+    background-color: #E2E8F0 !important;
+    /* padding: 7px 25px; */
+    border-radius: .2rem;
+    border: none;
+}
+.salesbtn:hover{
+    color: #333 !important;
+    background-color: #E2E8F0 !important;
+}
+.nrmlbtn{
+    color: #64748B !important;
+    background-color: #F3F4F7 !important;
+    border: none !important;
+}
+.staff_container{
+    background-color: #fff;
+    margin-top: 2rem;
+    padding: 1rem;
+}

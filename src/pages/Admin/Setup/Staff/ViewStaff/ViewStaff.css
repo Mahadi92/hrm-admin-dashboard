@@ -1,0 +1,18 @@
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem !important;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #ffffff;
+    background-color: #5369f8 !important;
+    /* border-color: #e2e7f1 #e2e7f1 #fff; */
+    border-right: 1px solid #8888 !important;
+    height: 31px !important;
+}
+.tab-content {
+    padding:0 !important;
+}
+.viewColRight{
+    background-color: #fff;
+    padding: 1rem;
+}

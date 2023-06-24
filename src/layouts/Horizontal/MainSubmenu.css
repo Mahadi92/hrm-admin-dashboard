@@ -1,0 +1,8 @@
+a:is(:link, :active, Link :visited).active {
+    /* font-size: 22px; */
+    font-weight: bold;
+    /* line-height: 37px; */
+    color: #dd057c !important;
+    /* border-bottom: none !important; */
+}
+
