@@ -25,7 +25,7 @@ import {
 import { APICore } from "../helpers/api/apiCore";
 import { AuthContext } from "../context/AuthContext";
 
-interface RoutesProps { }
+interface RoutesProps {}
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -61,19 +61,21 @@ const AllRoutes = (props: RoutesProps) => {
   let Layout = getLayout();
   const api = new APICore();
 
-  const { disspatch, user, } = useContext(AuthContext)
-  console.log('user', user)
+  const { disspatch, user } = useContext(AuthContext);
+  console.log("user", user);
   // const userLoggedIn = user?.User_Roll === "Admin"
   // const userEmpLoggedIn = user?.User_Roll === "Employee"
   // console.log('user logged in', userLoggedIn, userEmpLoggedIn)
 
-  const userrole: any = localStorage.getItem("role") ? JSON.parse(localStorage.getItem("role")!) : null
+  const userrole: any = localStorage.getItem("role")
+    ? JSON.parse(localStorage.getItem("role")!)
+    : null;
 
   // const { user } = useContext(AuthContext);
   // const userRole = user?.User_Roll?.trim();
-  console.log('userRole 71', typeof (userrole));
+  console.log("userRole 71", typeof userrole);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // const ProtectedRoute = ({ children:any }) => {
   //   const { user } = useContext(AuthContext);
@@ -87,17 +89,20 @@ const AllRoutes = (props: RoutesProps) => {
     const { user } = useContext(AuthContext);
 
     if (!user) {
-      return <Navigate to={{
-        pathname: "/auth/login",
-      }} />;
+      return (
+        <Navigate
+          to={{
+            pathname: "/auth/login",
+          }}
+        />
+      );
     }
 
     return <>{children}</>;
   };
 
-
   return (
-    <React.Fragment>
+    <>
       <Routes>
         <Route>
           {publicProtectedFlattenRoutes.map((route, idx) => (
@@ -107,11 +112,9 @@ const AllRoutes = (props: RoutesProps) => {
                 <DefaultLayout {...props} layout={layout}>
                   {route.element}
                 </DefaultLayout>
-
               }
               key={idx}
             />
-        
           ))}
         </Route>
 
@@ -136,12 +139,14 @@ const AllRoutes = (props: RoutesProps) => {
           ))}
         </Route> */}
 
-        <Route path="*"  element={
-          <ProtectedRoute>
-            <DefaultLayout {...props} layout={layout}>
-            </DefaultLayout>
-          </ProtectedRoute>
-        } />
+        <Route
+          path="*"
+          element={
+            <ProtectedRoute>
+              <DefaultLayout {...props} layout={layout}></DefaultLayout>
+            </ProtectedRoute>
+          }
+        />
 
         <Route>
           <>
@@ -151,11 +156,11 @@ const AllRoutes = (props: RoutesProps) => {
                   <Route
                     path={route.path}
                     element={
-                     userrole === null ? (
+                      userrole === null ? (
                         <Navigate
                           to={{
                             pathname: "auth/login",
-                            search: "next=" + route.path
+                            search: "next=" + route.path,
                           }}
                         />
                       ) : (
@@ -169,7 +174,7 @@ const AllRoutes = (props: RoutesProps) => {
             )}
           </>
         </Route>
-        
+
         <Route>
           <>
             {userrole === "Employee" && (
@@ -178,11 +183,11 @@ const AllRoutes = (props: RoutesProps) => {
                   <Route
                     path={route.path}
                     element={
-                     userrole === null ? (
+                      userrole === null ? (
                         <Navigate
                           to={{
                             pathname: "auth/login",
-                            search: "next=" + route.path
+                            search: "next=" + route.path,
                           }}
                         />
                       ) : (
@@ -196,10 +201,6 @@ const AllRoutes = (props: RoutesProps) => {
             )}
           </>
         </Route>
-
-
-
-
 
         {/* <Route>
           <ProtectedRoute>
@@ -231,7 +232,6 @@ const AllRoutes = (props: RoutesProps) => {
           </ProtectedRoute>
         </Route> */}
 
-
         {/* {
           userrole === "Employee" &&
           <Route>
@@ -255,10 +255,8 @@ const AllRoutes = (props: RoutesProps) => {
             ))}
           </Route>
         } */}
-
       </Routes>
-    </React.Fragment>
-
+    </>
   );
 };
 

@@ -17,9 +17,7 @@ configureFakeBackend();
 const App = () => {
   return (
     <>
-      <React.Fragment>
-        <AllRoutes />
-      </React.Fragment>
+      <AllRoutes />
     </>
   );
 };
