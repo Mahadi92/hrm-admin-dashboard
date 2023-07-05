@@ -9,16 +9,16 @@ import { Provider } from "react-redux";
 import { configureStore } from "./redux/store";
 import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from './context/AuthContext'
+import store from "./store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <Provider store={configureStore({})}>
-    <React.Fragment>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+  {/* <Provider store={store}> */}
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <AuthContextProvider>
         <App />
       </AuthContextProvider>
-      </BrowserRouter>
-    </React.Fragment>
+    </BrowserRouter>
   </Provider>
 );
