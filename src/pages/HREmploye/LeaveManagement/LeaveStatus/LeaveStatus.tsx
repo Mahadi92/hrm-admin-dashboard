@@ -33,14 +33,14 @@ const LeaveStatus = () => {
 
     // form data - construct here for sending via api POST request...
     const data = new FormData();
-    data.append("Process", "create");
     data.append("employee_user_name", "admin");
     data.append("employee_password", "admin");
-    data.append("Employee_Name", Employee_Name);
-    data.append("Leave_Type", Leave_Type);
-    data.append("Leave_Duration", Leave_Duration);
-    data.append("End_Date", End_Date);
-    data.append("Reason_Note", Reason_Note);
+    data.append("Process", "employee_leave_create");
+    // data.append("name", Employee_Name);
+    data.append("leave_type", Leave_Type);
+    data.append("leave_duration", Leave_Duration);
+    data.append("end_date", End_Date);
+    data.append("reason_note", Reason_Note);
 
     // just print at console
     // console.log("Employee_Name", Employee_Name);
